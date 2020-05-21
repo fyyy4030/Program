@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/close.ico</file>
+        <file>image/firstpage.ico</file>
+        <file>image/lastpaget.ico</file>
+        <file>image/nextpage.ico</file>
+        <file>image/open.ico</file>
+        <file>image/previouspage.ico</file>
+        <file>image/save.ico</file>
+        <file>image/zoom_in.ico</file>
+        <file>image/zoom_out.ico</file>
+        <file>image/zoom_reset.ico</file>
+    </qresource>
+</RCC>
