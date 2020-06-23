@@ -14,7 +14,7 @@ ClientWidget::ClientWidget(QWidget *parent) :
 
     isStart = true;
 
-    //ui->progressBar->setValue(0);
+    ui->progressBar->setValue(0);
 
     setWindowTitle("Client");
 
@@ -51,12 +51,12 @@ ClientWidget::ClientWidget(QWidget *parent) :
                     QString str = QString("Receive file: [%1: %2kb]")
                             .arg(fileName)
                             .arg(fileSize/1024);
-                   // QMessageBox::information(this, "FileInfo", str);
+                   //QMessageBox::information(this, "FileInfo", str);
 
-//                    ui->progressBar->setMinimum(0);
+                    ui->progressBar->setMinimum(0);
 
-//                    ui->progressBar->setMaximum(fileSize/1024);
-//                    ui->progressBar->setValue(0);
+                    ui->progressBar->setMaximum(fileSize/1024);
+                    ui->progressBar->setValue(0);
 
                 }
                 else
@@ -69,7 +69,7 @@ ClientWidget::ClientWidget(QWidget *parent) :
                         qDebug() << "client" << len << "recvSize" << recvSize;
                     }
 
-                    //ui->progressBar->setValue(recvSize/1024);
+                    ui->progressBar->setValue(recvSize/1024);
 
                     if (recvSize == fileSize)
                     {
@@ -106,5 +106,5 @@ void ClientWidget::on_button_connect_clicked()
     tcpSocket->connectToHost(QHostAddress(ip), port);
 
     isStart = true;
-    //ui->progressBar->setValue(0);
+    ui->progressBar->setValue(0);
 }
