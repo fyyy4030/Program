@@ -30,6 +30,7 @@ ServerWidget::ServerWidget(QWidget *parent) :
                         .arg(ip)
                         .arg(port);
 
+                qDebug() << str;
                 ui->textEdit_2->setText(str);
 
                 ui->button_select->setEnabled(true);
@@ -107,7 +108,7 @@ void ServerWidget::on_button_send_clicked()
 
     QString head = QString("%1##%2").arg(fileName).arg(fileSize);
     qint64 len = tcpSocket->write(head.toUtf8());
-
+    qDebug() << "server on_button_send_clicked";
     if (len > 0)
     {
         timer.start(20);
@@ -124,6 +125,7 @@ void ServerWidget::on_button_send_clicked()
 void ServerWidget::sendData()
 {
     ui->textEdit_2->append("sending file...");
+    qDebug() << "server sendData";
     qint64 len = 0;
 
     do

@@ -26,9 +26,6 @@ ClientWidget::ClientWidget(QWidget *parent) :
                 {
                     isStart = false;
 
-//                    fileName = QString(buf).section("##", 0, 0);
-//                    //文件大小
-//                    fileSize = QString(buf).section("##", 1, 1).toInt();
                     QString temp = QString(buf).toUtf8();
                     qDebug() << "temp : " << temp;
                     fileName = temp.section("##", 0, 0);
@@ -54,7 +51,7 @@ ClientWidget::ClientWidget(QWidget *parent) :
                     QString str = QString("Receive file: [%1: %2kb]")
                             .arg(fileName)
                             .arg(fileSize/1024);
-                    QMessageBox::information(this, "FileInfo", str);
+                   // QMessageBox::information(this, "FileInfo", str);
 
 //                    ui->progressBar->setMinimum(0);
 
